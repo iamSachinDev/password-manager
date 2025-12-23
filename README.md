@@ -75,6 +75,8 @@ $ npm run test:cov
 
 ## 📚 API Documentation
 
+A comprehensive **Postman Collection** is included in the repository: `postman_collection.json`. Import this file into Postman to test all available endpoints (Auth, Vault, Health).
+
 ### Health Check
 - **Endpoint**: `/health`
 - **Method**: `GET`
@@ -82,11 +84,21 @@ $ npm run test:cov
   ```json
   {
     "status": "ok",
-    "info": {},
-    "error": {},
-    "details": {}
+    "info": {
+      "database": { "status": "up" },
+      "memory_heap": { "status": "up" }
+    },
+    ...
   }
   ```
+
+## 📊 Logging
+
+The application uses **Pino** for high-performance logging.
+
+-   **Development**: Pretty-printed logs for better readability.
+-   **Production**: Structured JSON logs.
+-   **Security**: **Strict Redaction** is enabled. Sensitive fields (passwords, tokens, auth headers) are automatically redacted in logs.
 
 ## 🔐 Security
 
