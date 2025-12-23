@@ -2,48 +2,52 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+<p align="center">
+  <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+  <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+  <a href="https://www.typescriptlang.org/" target="_blank"><img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" /></a>
+  <a href="https://www.mongodb.com/" target="_blank"><img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB" /></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+<p align="center">A secure, progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
 
-A secure, NestJS-based Password Manager API.
+---
 
-This project provides a backend API for a password manager, featuring:
-- Secure user authentication
-- Encrypted vault storage
-- Audit logging
-- Health checks
-- Security best practices (Helmet, etc.)
+## 🛡️ Password Manager API
 
-## Prerequisites
+A robust and secure backend API designed for password management operations. Built with security-first principles using NestJS.
 
-- Node.js (v18+)
-- MongoDB
+### ✨ Features
 
-## Installation
+- **🔐 Secure Authentication**: Robust user auth flow.
+- **🛡️ Encrypted Vault**: AES-256 standard encryption for stored credentials.
+- **📝 Audit Logging**: Comprehensive tracking of all user actions.
+- **❤️ Health Checks**: Integrated system and database health monitoring.
+- **🔒 Enhanced Security**: Helmet integration, Argon2 hashing, and strict validation.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [NestJS](https://nestjs.com/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Database**: [MongoDB](https://www.mongodb.com/)
+- **Validation**: [Zod](https://zod.dev/)
+- **Security**: [Helmet](https://helmetjs.github.io/), [Argon2](https://github.com/ranisalt/node-argon2)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed:
+- **Node.js** (v18+)
+- **MongoDB** instance (Local or Atlas)
+
+### Installation
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+### Running the Application
 
 ```bash
 # development
@@ -56,7 +60,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## 🧪 Testing
 
 ```bash
 # unit tests
@@ -69,12 +73,12 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## API Documentation
+## 📚 API Documentation
 
 ### Health Check
-- **endpoint**: `/health`
-- **method**: `GET`
-- **response**:
+- **Endpoint**: `/health`
+- **Method**: `GET`
+- **Response**:
   ```json
   {
     "status": "ok",
@@ -84,33 +88,17 @@ $ npm run test:cov
   }
   ```
 
-## Security
+## 🔐 Security
 
-This application uses `helmet` for security headers and follows best practices for secure password storage using `argon2`.
+This application adheres to industry best practices:
+- **Headers**: Configured with `helmet` for HTTP security headers.
+- **Hashing**: Passwords hashed using `argon2`.
+- **Validation**: Strict input validation using `zod`.
 
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
+## 🤝 Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
+## 📄 License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
