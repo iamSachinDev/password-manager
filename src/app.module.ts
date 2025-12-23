@@ -8,6 +8,10 @@ import { HealthModule } from './modules/health/health.module'
     LoggerModule.forRoot({
       pinoHttp: {
         transport: process.env.NODE_ENV !== 'production' ? { target: 'pino-pretty' } : undefined,
+        redact: {
+          paths: ['req.headers.authorization', 'req.body.password', 'req.body.confirmPassword', 'req.body.token', 'req.body.oldPassword', 'req.body.newPassword'],
+          censor: '[Redacted]',
+        },
       },
     }),
     MongoModule,
