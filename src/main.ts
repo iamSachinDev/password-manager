@@ -1,6 +1,8 @@
 import 'dotenv/config'
 import { NestFactory } from '@nestjs/core'
 import { Logger } from 'nestjs-pino'
+import * as figlet from 'figlet'
+import chalk from 'chalk'
 import { AppModule } from './app.module'
 import { helmetMiddleware } from './security/helmet.config'
 import { securityHeaders } from './security/headers.middleware'
@@ -26,5 +28,11 @@ async function bootstrap() {
   process.on('SIGTERM', shutdown)
 
   await app.listen(3000)
+
+  const banner = figlet.textSync('Password Manager', { font: 'Big' })
+  console.log(chalk.cyan(banner))
+  console.log(chalk.green('🚀 Server is running on http://localhost:3000'))
+  console.log(chalk.blue('📚 Swagger UI: http://localhost:3000/api'))
+  console.log(chalk.yellow('🩺 Health Check: http://localhost:3000/health'))
 }
 bootstrap()
