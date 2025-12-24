@@ -7,6 +7,29 @@
     },
     "item": [
         {
+            "name": "Docs",
+            "item": [
+                {
+                    "name": "Swagger UI",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api"
+                            ]
+                        },
+                        "description": "OpenAPI Documentation (Swagger UI)"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
             "name": "Health",
             "item": [
                 {
@@ -92,9 +115,9 @@
             "name": "Vault",
             "item": [
                 {
-                    "name": "Add Password",
+                    "name": "Update Vault",
                     "request": {
-                        "method": "POST",
+                        "method": "PUT",
                         "header": [
                             {
                                 "key": "Authorization",
@@ -107,7 +130,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"website\": \"google.com\",\n    \"username\": \"myuser\",\n    \"password\": \"secret123\"\n}"
+                            "raw": "{\n    \"encryptedVault\": \"<base64_string>\",\n    \"kdf\": {}\n}"
                         },
                         "url": {
                             "raw": "{{baseUrl}}/vault",
@@ -117,7 +140,8 @@
                             "path": [
                                 "vault"
                             ]
-                        }
+                        },
+                        "description": "Update the entire encrypted vault blob."
                     },
                     "response": []
                 },
