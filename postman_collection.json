@@ -67,7 +67,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"email\": \"test@example.com\",\n    \"password\": \"StrongPass123!\"\n}"
+                            "raw": "{\n    \"email\": \"test{{$randomInt}}@example.com\",\n    \"passwordHash\": \"$2b$10$Nz2yX2wQZFhvO.HhbV1nfOK9yWw6www3oyrFOcc4bIxuvvVmB8a.G\",\n    \"kdf\": {\n        \"salt\": \"somesalt\",\n        \"memoryCost\": 65536,\n        \"timeCost\": 3,\n        \"parallelism\": 1,\n        \"keyLength\": 32\n    },\n    \"encryptedVault\": {\n        \"version\": \"v1\",\n        \"algorithm\": \"aes-256-gcm\",\n        \"iv\": \"dummyIV\",\n        \"authTag\": \"dummyTag\",\n        \"ciphertext\": \"dummyCiphertext\"\n    }\n}"
                         },
                         "url": {
                             "raw": "{{baseUrl}}/auth/register",
@@ -84,6 +84,21 @@
                 },
                 {
                     "name": "Login",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "var jsonData = pm.response.json();",
+                                    "if (jsonData.accessToken) {",
+                                    "    pm.collectionVariables.set(\"accessToken\", jsonData.accessToken);",
+                                    "    console.log(\"Access Token saved to collection variables\");",
+                                    "}"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
                     "request": {
                         "method": "POST",
                         "header": [
@@ -130,7 +145,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"encryptedVault\": \"<base64_string>\",\n    \"kdf\": {}\n}"
+                            "raw": "{\n    \"version\": \"v1\",\n    \"algorithm\": \"aes-256-gcm\",\n    \"iv\": \"dGhpcyBpcyBhbiBpdiBmb3IgdGVzdGluZw==\",\n    \"authTag\": \"dGhpcyBpcyBhbiBhdXRoIHRhZw==\",\n    \"ciphertext\": \"c29tZSBlbmNyeXB0ZWQgZGF0YSBnb2VzIGhlcmU=\"\n}"
                         },
                         "url": {
                             "raw": "{{baseUrl}}/vault",
