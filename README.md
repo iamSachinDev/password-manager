@@ -41,6 +41,21 @@ Ensure you have the following installed:
 - **Node.js** (v18+)
 - **MongoDB** instance (Local or Atlas)
 
+### Environment Configuration
+
+Create a `.env` file in the root directory with the following variables:
+
+#### Required
+- `MONGO_URI`: MongoDB connection string (e.g., `mongodb://localhost:27017`)
+- `MONGO_DB`: Database name (e.g., `password_manager`)
+- `JWT_SECRET`: Secret key for signing JWT tokens
+
+#### Optional (Defaults)
+- `PORT`: Server port (default: `3000`)
+- `NODE_ENV`: Environment mode (default: `development`)
+- `CRYPTO_ALGORITHM`: Encryption algorithm (default: `aes-256-gcm`)
+- `ARGON2_MEMORY`: Argon2 memory cost (default: `65536`)
+
 ### Installation
 
 ```bash
