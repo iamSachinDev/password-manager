@@ -107,6 +107,21 @@ A comprehensive **Postman Collection** is included in the repository: `postman_c
   }
   ```
 
+
+## 🔄 Usage Workflow
+
+Follow this sequence to test the API in Postman:
+
+1.  **Register**: Send a `POST` request to `/auth/register` to create a new user account.
+2.  **Login**: Send a `POST` request to `/auth/login` with the same credentials.
+    -   In the response, copy the `accessToken`.
+3.  **Set Token**:
+    -   In Postman, set the `accessToken` variable in the collection or environment.
+    -   Or, manually add the header: `Authorization: Bearer <your_token>`.
+4.  **Vault Operations**: Now you can access protected routes.
+    -   Use `PUT /vault` to update your vault.
+    -   Use `GET /vault` to retrieve it.
+
 ## 📊 Logging
 
 The application uses **Pino** for high-performance logging.
